@@ -10,15 +10,13 @@ require APPPATH . 'libraries/REST_Controller.php';
 require APPPATH . 'libraries/Format.php';
 require APPPATH . 'libraries/ImplementJwt.php';
 /**
- * This is an example of a few basic user interaction methods you could use
+ * This is an example of a few basic user interaction methods you could use for JWT authentication
  * all done with a hardcoded array
  *
  * @package         CodeIgniter
  * @subpackage      Rest Server
  * @category        Controller
- * @author          Phil Sturgeon, Chris Kacerguis
- * @license         MIT
- * @link            https://github.com/chriskacerguis/codeigniter-restserver
+ * @author          Prabhat Sharma
  */
 class RestJWT extends CI_Controller {
 
@@ -31,7 +29,7 @@ class RestJWT extends CI_Controller {
         // Construct the parent class
         parent::__construct();
         $this->__resTraitConstruct();
-         $this->objOfJwt = new ImplementJwt();
+        $this->objOfJwt = new ImplementJwt();
         // Configure limits on our controller methods
         // Ensure you have created the 'limits' table and enabled 'limits' within application/config/rest.php
         $this->methods['users_get']['limit'] = 500; // 500 requests per hour per user/key
